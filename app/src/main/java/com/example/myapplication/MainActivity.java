@@ -80,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        Toast toast = Toast.makeText(getApplicationContext() , "onPause" , Toast.LENGTH_LONG);
+        Toast toast = Toast.makeText(getApplicationContext() , "onPause called" , Toast.LENGTH_LONG);
         toast.show();
-        Log.d(Tag , "onPause");
+        Log.d(Tag , "onPause called");
     }
     @Override
     protected void onStop()
@@ -92,7 +92,13 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
         Log.d(Tag , "onStop called");
     }
-
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Toast toast = Toast.makeText(getApplicationContext() , "onDestroy called" , Toast.LENGTH_LONG);
+        toast.show();
+        Log.d(Tag , "onDestroy called");
+    }
 
 
 
