@@ -77,6 +77,14 @@ public class MainActivity extends AppCompatActivity {
         toast.show();
         Log.d(Tag, "onResume called");
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Toast toast = Toast.makeText(getApplicationContext() , "onPause" , Toast.LENGTH_LONG);
+        toast.show();
+        Log.d(Tag , "onPause");
+    }
+
     
 
 
