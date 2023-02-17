@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String Tag = "Practical1";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
 
         Toast toast = Toast.makeText(getApplicationContext() , "onCreat called" , Toast.LENGTH_LONG);
@@ -53,19 +54,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onStart() {
+    protected void onStart()
+    {
         super.onStart();
         Toast toast = Toast.makeText(getApplicationContext() , "onStart called" , Toast.LENGTH_LONG);
         toast.show();
         Log.d(Tag , "onStart called");
     }
-   
+
     @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+    @Override
+    protected void onResume()
+    {
+        super.onResume();
+        Toast toast = Toast.makeText(getApplicationContext() , "onResume called" , Toast.LENGTH_LONG);
+        toast.show();
+        Log.d(Tag, "onResume called");
+    }
+    
+
 
 
 
