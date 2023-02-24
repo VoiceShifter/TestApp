@@ -97,8 +97,15 @@ public class MainActivity extends AppCompatActivity {
 
         Toast toast = Toast.makeText(getApplicationContext() , "onDestroy called" , Toast.LENGTH_LONG);
         toast.show();
-        Log.d(Tag , "onDestroy called");
+        Log.e(Tag , "onDestroy called");
         super.onDestroy();
+    }
+    @Override
+    protected void onRestart() {
+        Toast toast = Toast.makeText(getApplicationContext() , "onRestart called" , Toast.LENGTH_LONG);
+        toast.show();
+        Log.i(Tag , "onRestart called");
+        super.onRestart();
     }
 
 
