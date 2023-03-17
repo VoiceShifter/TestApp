@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); //showing the activity_main.xml
+        setContentView(R.layout.test_layout); //showing the activity_main.xml
 
         Toast toast = Toast.makeText(getApplicationContext() , "onCreat called" , Toast.LENGTH_LONG);
         toast.show();
