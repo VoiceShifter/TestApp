@@ -1,5 +1,6 @@
 package com.example.myapplication;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -23,18 +24,24 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
-    private ActivityMainBinding binding;
-    private static final String Tag = "Practical1";
+    private static final String Tag = "Practical2";
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.test_layout); //showing the activity_main.xml
+        setContentView(R.layout.activity_main);
 
-        Toast toast = Toast.makeText(getApplicationContext() , "onCreat called" , Toast.LENGTH_LONG);
-        toast.show();
-        Log.d(Tag , "onCreate called");
+        findViewById(R.id.my_button).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent test = new Intent(MainActivity.this, TestActivity.class);
+                test.putExtra("test","Message to pass");
+                startActivity(test);
+                Log.i(Tag, "to another activity");
+            }
+        });
+
     }
 
     @Override
