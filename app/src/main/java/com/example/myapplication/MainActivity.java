@@ -25,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private AppBarConfiguration appBarConfiguration;
     private static final String Tag = "Practical2";
-
+    private static final String Key = "key";
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -36,13 +36,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent test = new Intent(MainActivity.this, TestActivity.class);
-                test.putExtra("test","Message to pass");
+                test.putExtra(Key,"Message to pass");
                 startActivity(test);
-                Log.i(Tag, "to another activity");
+
+
             }
         });
 
+
     }
+
 
     @Override
     protected void onStart()
